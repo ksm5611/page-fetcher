@@ -2,17 +2,9 @@ const fs  = require('fs');
 const request = require('request');
 const args = process.argv.slice(2);
 
-let requestUrl = '';
-let localFile = '';
+let requestUrl = args[0];
+let localFile = args[1];
 
-for (let i = 0; i < args.length; i++) {
-  if (args[i] === args[0]) {
-    requestUrl += args[0];
-  }
-  if (args[i] === args[1]) {
-    localFile += args[1];
-  }
-}
 
 
 request(requestUrl, (error, response, body) => {
